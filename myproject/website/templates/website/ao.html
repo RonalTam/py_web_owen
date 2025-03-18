@@ -1,0 +1,586 @@
+{% load static %}
+{% extends "website/base.html" %}
+
+{% block content %}
+  <main class="content">
+    <div class="container-fuild">
+      <div class="pt-5 mt-5">
+        <ul class="list-group list-group-flush list-group-horizontal">
+          <li class="list-group-item border-end">
+            <a href="index.html" class="text-decoration-none text-dark">Trang chủ
+            </a>
+          </li>
+          <li class="list-group-item border-0 text-secondary">Áo</li>
+        </ul>
+      </div>
+      <div class="banner">
+        <img src=" {% static "assets/images/4546_x_1000_ao_1.jpg" %} " style="width: 100%; object-fit: cover;" alt="">
+        <div class="banner-text">
+          <h1>Áo OWEN Nam </h1>
+          <p>Áo Owen nam đẹp, kiểu dáng thanh lịch cùng chất liệu cao cấp sẽ giúp bạn xây dựng phong cách lịch lãm, thu
+            hút mọi ánh nhìn.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fuild">
+      <div class="row mx-3">
+        <div class="col-md-3">
+          <div class="sidebar">
+            <ul class="list-group ps-3">
+              <li class="list-group-item"><a href="">
+                  <h5>HÀNG MỚI VỀ</h5>
+                </a></li>
+              <li class="list-group-item"><a href=""><strong>BỘ SƯU TẬP</strong></li>
+              <ul class="list-group pb-3">
+                <li class="list-group-item"><a href="">KAIZEN</a></li>
+                <li class="list-group-item"><a href="">BE CONFIDENT </a></li>
+                <li class="list-group-item"><a href="">INNER RISE</a></li>
+                <li class="list-group-item"><a href="">INSPIRED BY THE CITY </a></li>
+                <li class="list-group-item"><a href="">JOY THE BEAT</a></li>
+                <li class="list-group-item"><a href="">BST BẠC HÀ</a></li>
+                <li class="list-group-item"><a href="">RENU</a></li>
+              </ul>
+              <li class="list-group-item"><a href="">
+                  <h5>BST Retro vacation </h5>
+                </a></li>
+              <li class="list-group-item"><a href=""><strong>GIÁ TỐT</strong></li>
+              <ul class="list-group pb-3">
+                <li class="list-group-item"><a href="">Polo - Tshirt </a></li>
+                <li class="list-group-item"><a href="">Quần giá tốt</a></li>
+                <li class="list-group-item"><a href="">Áo sơ mi</a></li>
+              </ul>
+              <li class="list-group-item"><a href="">
+                  <h5>Áo polo cafe</h5>
+                </a></li>
+              <li class="list-group-item"><a href=""><strong>ÁO</strong></li>
+              <ul class="list-group pb-3">
+                <li class="list-group-item"><a href="">Áo Polo</a></li>
+                <li class="list-group-item"><a href="">Áo Sơ Mi</a></li>
+                <li class="list-group-item"><a href="">Áo T-Shirt</a></li>
+                <li class="list-group-item"><a href="">Áo Blazer</a></li>
+                <li class="list-group-item"><a href="">Áo Veston</a></li>
+                <li class="list-group-item"><a href="">Áo Jacket</a></li>
+                <li class="list-group-item"><a href="">Áo Len</a></li>
+                <li class="list-group-item"><a href="">Sơ Mi Cao Cấp</a></li>
+                <li class="list-group-item"><a href="">Áo Hoodie</a></li>
+                <li class="list-group-item"><a href="">Áo Thun</a></li>
+                <li class="list-group-item"><a href="">Áo Blazer</a></li>
+              </ul>
+              <li class="list-group-item"><a href=""><strong>QUẦN</strong></li>
+              <ul class="list-group pb-3">
+                <li class="list-group-item"><a href="">Quần Short</a></li>
+                <li class="list-group-item"><a href="">Quần Tây</a></li>
+                <li class="list-group-item"><a href="">Quần Khaki</a></li>
+                <li class="list-group-item"><a href="">Quần Jeans</a></li>
+                <li class="list-group-item"><a href="">Quần Jogger</a></li>
+              </ul>
+              <li class="list-group-item"><a href=""><strong>PHỤ KIỆN</strong></li>
+              <ul class="list-group pb-3">
+                <li class="list-group-item"><a href="">Đồ lót</a></li>
+                <li class="list-group-item"><a href="">Tất</a></li>
+                <li class="list-group-item"><a href="">Dây Lưng</a></li>
+                <li class="list-group-item"><a href="">Ví Da</a></li>
+                <li class="list-group-item"><a href="">Cà Vạt</a></li>
+              </ul>
+              <!-- <li class="list-group-item"><a href=""><strong>SẢN PHẨM BÁN CHẠY</span></strong></li> -->
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row" id="product-list">
+            <!-- Trang 1 -->
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/35_4_1.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/61.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/dscf0335.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/dscf0335.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/dscf0335.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/dscf0335.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/dscf0335.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="{% static "assets/images/dscf0335.webp" %}" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/untitled-1_2.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf0245_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf0134.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf0552_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <!-- Trang 2 -->
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/as240001d.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/49.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/jk241478._2_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/jk231604._64_1.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf0710_1.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/owen_37_1__jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf0335_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/30_2.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/ar240042n._2.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/40_1.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/owen1104_copy_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/67.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <!-- Trang 3 -->
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf9258.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/bl231489._89.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/apv233185._22_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/4_24_1.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/apv233174._4.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/27_png.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/6_3_1.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf1520.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/55.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/2_131_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf1064.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/36_png.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <!-- Trang 4 -->
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf0552.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf1031_jpg.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="ao_so_mi.html">
+                  <img src="assets/images/dscf9831.webp" class="card-img-top" alt="ÁO SƠ MI - AD240020D" />
+                </a>
+                <div class="card-body">
+                  <a href="ao_so_mi.html" class="btn btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">ÁO SƠ MI - AD240020D</p>
+                  <span>1.100.000 ₫</span>
+                </div>
+              </div>
+            </div>
+            <!-- Het trang -->
+          </div>
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous" onclick="prevPage()">
+                  <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="changePage(2)">2</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="changePage(3)">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="changePage(4)">4</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next" onclick="nextPage()">
+                  <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock content %}

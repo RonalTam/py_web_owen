@@ -1,0 +1,270 @@
+{% load static %}
+<header class="header">
+    <div class="hotline">Hỗ trợ khách hàng: <strong></strong></div>
+    <nav class="navbar navbar-expand-lg p-3 fixed-top bg-white">
+      <div class="container-fluid">
+        <div class="mobile-narbar d-none">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-body">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="menu-tab" data-bs-toggle="tab" data-bs-target="#menu"
+                    type="button" role="tab" aria-controls="menu" aria-selected="true">Menu</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button"
+                    role="tab" aria-controls="user" aria-selected="false">Tài khoản</button>
+                </li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="menu" role="tabpanel" aria-labelledby="menu-tab" tabindex="0">
+                  <ul class="list-group">
+                    <li class="list-group-item border-0 border-bottom">
+                      <a href="home.html">HÀNG MỚI</a>
+                    </li>
+                    <li class="list-group-item border-0 border-bottom">
+                      <a href="">GIÁ TỐT</a>
+                      <!-- <div class="dropdown">
+                        <button type="button" data-bs-toggle="dropdown" class="btn dropdown-toggle">
+                        </button> -->
+                        <!-- Menu dropdown -->
+                        <!-- <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div> -->
+                    </li>
+                    <li class="list-group-item border-0 border-bottom"><a href="{% url "ao" %}">ÁO</a></li>
+                    <li class="list-group-item border-0 border-bottom"><a href="">QUẦN</a></li>
+                    <li class="list-group-item border-0 border-bottom"><a href="">PHỤ KIỆN</a></li>
+                    <li class="list-group-item border-0 border-bottom"><a href="">CỬA HÀNG</a></li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="user" role="tabpanel" aria-labelledby="user-tab" tabindex="0">
+                  <ul class="list-group">
+                    <li class="list-group-item border-0 border-bottom"><a href="dangnhap.html">Đăng nhập</a></li>
+                    <li class="list-group-item border-0 border-bottom"><a href="dangki.html">Tạo tài khoản</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <img src="{% static 'website/assets/images/logo.svg'%}" alt="Bootstrap" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="index.html">HÀNG MỚI</a>
+              <span class="position-absolute translate-middle badge rounded-pill bg-danger"
+                style="top: 35%; left: 25%; font-size: 8px;">
+                HOT</span>
+            </li>
+            <li class="nav-item menu px-3">
+              <a class="nav-link" href="ao.html">ÁO</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row justify-content-end">
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Áo</strong>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi</a>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi Trắng</a>
+                        <a class="dropdown-item" href="#">Áo Jacket</a>
+                        <a class="dropdown-item" href="#">Áo Blazer</a>
+                        <a class="dropdown-item" href="#">Áo Polo</a>
+                        <a class="dropdown-item" href="#">Áo T-Shirt</a>
+                        <a class="dropdown-item" href="#">Áo Veston</a>
+                        <a class="dropdown-item" href="#">Áo Len</a>
+                        <a class="dropdown-item" href="#">Bộ mặc nhà</a>
+                      </div>
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Quần</strong>
+                        <a class="dropdown-item" href="#">Quần Tây</a>
+                        <a class="dropdown-item" href="#">Quần Short</a>
+                        <a class="dropdown-item" href="#">Quần Khaki</a>
+                        <a class="dropdown-item" href="#">Quần Jeans</a>
+                        <a class="dropdown-item" href="#">Quần Jogger</a>
+                      </div>
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Phụ Kiện</strong>
+                        <a class="dropdown-item" href="#">Đồ Lót</a>
+                        <a class="dropdown-item" href="#">Tất</a>
+                        <a class="dropdown-item" href="#">Dây Lưng</a>
+                        <a class="dropdown-item" href="#">Ví Da</a>
+                        <a class="dropdown-item" href="#">Cà Vạt</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-4">
+                    <img src="{% static 'website/assets/images/1500_x_550_o_2 (1).webp'%}" class="img-fluid" alt="">
+                  </div>
+              </ul>
+            </li>
+            <li class="nav-item menu px-3">
+              <a class="nav-link" href="#">QUẦN</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row justify-content-end">
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Áo</strong>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi</a>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi Trắng</a>
+                        <a class="dropdown-item" href="#">Áo Jacket</a>
+                        <a class="dropdown-item" href="#">Áo Blazer</a>
+                        <a class="dropdown-item" href="#">Áo Polo</a>
+                        <a class="dropdown-item" href="#">Áo T-Shirt</a>
+                        <a class="dropdown-item" href="#">Áo Veston</a>
+                        <a class="dropdown-item" href="#">Áo Len</a>
+                        <a class="dropdown-item" href="#">Bộ mặc nhà</a>
+                      </div>
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Quần</strong>
+                        <a class="dropdown-item" href="#">Quần Tây</a>
+                        <a class="dropdown-item" href="#">Quần Short</a>
+                        <a class="dropdown-item" href="#">Quần Khaki</a>
+                        <a class="dropdown-item" href="#">Quần Jeans</a>
+                        <a class="dropdown-item" href="#">Quần Jogger</a>
+                      </div>
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Phụ Kiện</strong>
+                        <a class="dropdown-item" href="#">Đồ Lót</a>
+                        <a class="dropdown-item" href="#">Tất</a>
+                        <a class="dropdown-item" href="#">Dây Lưng</a>
+                        <a class="dropdown-item" href="#">Ví Da</a>
+                        <a class="dropdown-item" href="#">Cà Vạt</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-4">
+                    <img src="{% static 'website/assets/images/qu_n_021024.webp'%}" class="img-fluid" alt="">
+                  </div>
+              </ul>
+            </li>
+            <li class="nav-item menu px-3">
+              <a class="nav-link" href="#">PHỤ KIỆN</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row justify-content-end">
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Áo</strong>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi</a>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi Trắng</a>
+                        <a class="dropdown-item" href="#">Áo Jacket</a>
+                        <a class="dropdown-item" href="#">Áo Blazer</a>
+                        <a class="dropdown-item" href="#">Áo Polo</a>
+                        <a class="dropdown-item" href="#">Áo T-Shirt</a>
+                        <a class="dropdown-item" href="#">Áo Veston</a>
+                        <a class="dropdown-item" href="#">Áo Len</a>
+                        <a class="dropdown-item" href="#">Bộ mặc nhà</a>
+                      </div>
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Quần</strong>
+                        <a class="dropdown-item" href="#">Quần Tây</a>
+                        <a class="dropdown-item" href="#">Quần Short</a>
+                        <a class="dropdown-item" href="#">Quần Khaki</a>
+                        <a class="dropdown-item" href="#">Quần Jeans</a>
+                        <a class="dropdown-item" href="#">Quần Jogger</a>
+                      </div>
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Phụ Kiện</strong>
+                        <a class="dropdown-item" href="#">Đồ Lót</a>
+                        <a class="dropdown-item" href="#">Tất</a>
+                        <a class="dropdown-item" href="#">Dây Lưng</a>
+                        <a class="dropdown-item" href="#">Ví Da</a>
+                        <a class="dropdown-item" href="#">Cà Vạt</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-4">
+                    <img src="{% static 'website/assets/images/ph_-ki_n-021024_optimized.webp'%}" class="img-fluid" alt="">
+                  </div>
+              </ul>
+            </li>
+            <li class="nav-item menu px-3">
+              <a class="nav-link" href="#">GIÁ TỐT</a>
+              <ul class="dropdown-menu" tabindex="-1" aria-labelledby="navbarDropdown">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row justify-content-center">
+                      <div class="col-md-2 me-5">
+                        <strong class="dropdown-header">Giá tốt</strong>
+                        <a class="dropdown-item" href="#">Áo Sơ Mi</a>
+                        <a class="dropdown-item" href="#">Polo-Tshirt</a>
+                        <a class="dropdown-item" href="#">Quần Giá Tốt</a>
+                        <a class="dropdown-item" href="#">Ưu Đãi Đặc Biệt</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-4">
+                    <img src="{% static 'website/assets/images/gi_-t_t-021024_optimized.webp'%}" class="img-fluid" alt="">
+                  </div>
+              </ul>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#">CỦA HÀNG</a>
+            </li>
+          </ul>
+          <div class="search-bar">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Bạn tìm gì..." />
+          </div>
+          <div class="account ms-3">
+            <a href="dangnhap.html">
+              <i class="bi bi-person"></i>
+            </a>
+            <div class="dropdown-account">
+              <ul class="account-item list-group">
+                <li class="list-group-item p-0">
+                  <a href="dangnhap.html" class="p-3 w-100 d-flex">Đăng nhập</a>
+                </li>
+                <li class="list-group-item p-0">
+                  <a href="dangki.html" class="p-3 w-100 d-flex">Tạo tài khoản</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-search d-none">
+          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"><i class="bi bi-search"></i></button>
+          <div class="offcanvas offcanvas-end p-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-body">
+              <input type="search" placeholder="Nhập từ khóa tìm kiếm" name="" id="">
+              <div class="mt-4">
+                <h5>TÌM KIẾM GẦN ĐÂY</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart ms-3">
+          <a href="cart.html">
+              <button type="button" id="cart-btn" class="border-0 bg-transparent" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">
+                  <span><i class="bi bi-bag"></i></span>
+              </button>
+          </a>
+      </div>
+      </div>
+    </nav>
+    <!-- <nav class="navbar py-0 border-bottom px-3 bg-white">
+            <div class="container-fluid">
+                <p
+                 class="navbar-text p-0 m-0">
+                    <i class="bi bi-telephone-fill"></i>
+                    Hỗ trợ khách hàng: <strong>1900 8079</strong>
+                </p>
+            </div>
+        </nav> -->
+  </header>
