@@ -17,9 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from website import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('ao/', views.ao_view, name='ao'),
+    path('page-ao/', views.ao_view, name='ao'),
+    path('san-pham/<int:product_id>/', views.chi_tiet_san_pham, name='chi_tiet_san_pham'),
+    path('them-vao-gio-hang/<int:product_id>/', views.them_vao_gio_hang, name='them_vao_gio_hang'),
+    path('cart/', views.gio_hang, name='gio_hang'),
+    path('xoa-san-pham/', views.xoa_san_pham, name='xoa_san_pham'),
+
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

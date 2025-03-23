@@ -1,0 +1,77 @@
+{% extends "website/base.html" %} {% load static %} {% block styles_rieng %}
+<link rel="stylesheet" href="{% static "website/css/cart.css" %}"> 
+{% endblock styles_rieng %} {% block title %} Giỏ hàng {% endblock title %} 
+{% block content%}
+<div class="container-fuild" style="margin-top: 75px">
+  <div class="breadcrumbs ps-4">
+    <ul class="list-unstyled list-group-horizontal d-flex">
+      <li><a href="{% url 'home' %}">Trang Chủ</a></li>
+      <li>Giỏ hàng</li>
+    </ul>
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row">
+    <div class="col-md-9 pe-5">
+      <h3>Giỏ hàng</h3>
+      {% if gio %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ảnh</th>
+            <th>Sản phẩm</th>
+            <th>Size</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in gio %}
+          <tr>
+            <td><img src="{{ item.hinh_anh }}" width="70" /></td>
+            <td>{{ item.ten }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.gia }} ₫</td>
+            <td>{{ item.so_luong }}</td>
+            <td>
+              <form
+                action="{% url 'xoa_san_pham' %}"
+                method="POST"
+                class="d-inline"
+                onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?');"
+              >
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{ item.id }}" />
+                <input type="hidden" name="size" value="{{ item.size }}" />
+                <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>Giỏ hàng của bạn đang trống.</p>
+      {% endif %} 
+      {% if gio %}
+      <hr />
+      <div class="d-flex justify-content-lg-around">
+        <div class="d-flex" style="flex-direction: column-reverse">
+            <a href="{% url "home" %}" class="btn btn-outline-dark w-100">Tiếp tục mua sắm</a>
+        </div>
+        <div>
+            <p>Tổng sản phẩm: {{ tong_so_luong }}</p>
+            <p style="color: #c9ae63; font-size: 18px"><strong>Tổng tiền:</strong> {{ tong_tien }} ₫</p>
+            <a href="" class="btn w-100" style="background-color: #323232; color: white">Đặt hàng</a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="col-md-3">
+      <img src="{% static "website/assets/images/cart-banner-right.webp" %}"
+      class="img-fluid" alt="">
+    </div>
+  </div>
+</div>
+{% endblock content %}

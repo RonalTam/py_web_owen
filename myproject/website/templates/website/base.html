@@ -26,6 +26,8 @@
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
     <link rel="stylesheet" href="{% static 'website/css/style.css'%}" />
+    {% comment %} Css rieng {% endcomment %}
+    {% block styles_rieng %} {% endblock %}
     <link
       rel="icon"
       href="{% static 'website/assets/images/logo_owen_file_icon.webp'%}"
@@ -43,7 +45,16 @@
     <!-- Footer chung -->
     {% include "website/partials/footer.html" %}
 
-    <!-- JS chung -->
-     <script src="{% static "website/js/home.js" %}"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    {% block scripts_rieng %} {% endblock %}
   </body>
 </html>

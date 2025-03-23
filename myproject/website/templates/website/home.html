@@ -1,138 +1,265 @@
-{% extends "website/base.html" %}
-{% load static %}
-
-{% block title %}Michael Owen - Siêu tiền đạo người Anh{% endblock %}
-
-{% block content %}
-  <main class="content">
-    <div class="container-fuild">
-      <div class="" style="background-color: #cfd3cb; margin-top: 75px">
-        <div class="py-2 text-center">
-          <p class="m-0">
-            BE CONFIDENT -
-            <span><strong><a href="" style="
-                      color: inherit;
-                      text-decoration-color: #ec8c02 !important;
-                      text-decoration: underline;
-                    ">MUA NGAY</a>
-              </strong></span>
-          </p>
-        </div>
+{% extends "website/base.html" %} {% load static %} {% block title %}Michael
+Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
+<main class="content">
+  <div class="container-fuild">
+    <div class="" style="background-color: #cfd3cb; margin-top: 75px">
+      <div class="py-2 text-center">
+        <p class="m-0">
+          BE CONFIDENT -
+          <span
+            ><strong
+              ><a
+                href=""
+                style="
+                  color: inherit;
+                  text-decoration-color: #ec8c02 !important;
+                  text-decoration: underline;
+                "
+                >MUA NGAY</a
+              >
+            </strong></span
+          >
+        </p>
       </div>
-      <div class="carousel-content mt-3">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="2500">
-              <a href="#">
-                <img src="{% static 'website/assets/images/energy_flow-31.webp'%}" class="d-block w-100 img-fluid" alt="..." />
-              </a>
-            </div>
-            <div class="carousel-item" data-bs-interval="2500">
-              <a href="#">
-                <img src="{% static 'website/assets/images/untitled-1_kaizen.webp'%}" class="d-block w-100 img-fluid" alt="..." />
-              </a>
-            </div>
+    </div>
+    <div class="carousel-content mt-3">
+      <div
+        id="carouselExampleAutoplaying"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2500">
+            <a href="#">
+              <img
+                src="{% static 'website/assets/images/energy_flow-31.webp'%}"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+            </a>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      <div class="banner-home px-4 mt-3">
-        <div class="container-fuild">
-          <div class="row">
-            <div class="col-md-4 p-1">
-              <a href="ao_so_mi.html">
-                <img src="{% static 'website/assets/images/_nh_danh_m_c_3_kaizen.webp'%}" class="img-fluid" alt="" />
-              </a>
-            </div>
-            <div class="col-md-4 p-1">
-              <a href="ao_so_mi.html">
-                <img src="{% static 'website/assets/images/_nh_danh_m_c_1_Kaizen.webp'%}" class="img-fluid" alt="" />
-              </a>
-            </div>
-            <div class="col-md-4 p-1">
-              <a href="ao_so_mi.html">
-                <img src="{% static 'website/assets/images/_nh_danh_m_c_2_kaizen_1_1.webp'%}" class="img-fluid" alt="" />
-              </a>
-            </div>
+          <div class="carousel-item" data-bs-interval="2500">
+            <a href="#">
+              <img
+                src="{% static 'website/assets/images/untitled-1_kaizen.webp'%}"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+            </a>
           </div>
         </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="px-3 mt-3 position-relative">
-        <div id="carouselExampleAutoplaying2" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators d-flex position-absolute">
-            <button type="button" data-bs-target="#carouselExampleAutoplaying2" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleAutoplaying2" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-          </div>
-
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="3500">
-              <a href="#">
-                <img src="{% static 'website/assets/images/crs-1.webp'%}" class="d-block w-100" alt="..." />
-              </a>
-            </div>
-            <div class="carousel-item" data-bs-interval="3500">
-              <a href="#">
-                <img src="{% static 'website/assets/images/crs-2.webp'%}" class="d-block w-100" alt="..." />
-              </a>
-            </div>
-          </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying2"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying2"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      <div class="products-content pt-5">
-        <div class="products-title text-center mb-4">
-          <h3>BÁN CHẠY NHẤT</h3>
-        </div>
-        <div class="row products-slider" id="products-container">
-          <!-- Them san pham -->
-        </div>
-      </div>
-      <div class="banner-promo">
-        <a href="#"><img src="{% static 'website/assets/images/Sale_kaizen.webp'%}" class="img-fluid px-3 mt-5" alt="" /></a>
-      </div>
-      <div class="banner-subcribe mx-3 mt-3">
+    </div>
+    <div class="banner-home px-4 mt-3">
+      <div class="container-fuild">
         <div class="row">
-          <div class="col-md-8">
-            <a href="#"><img src="{% static 'website/assets/images/Email3_kaizen.webp'%}" class="img-fluid" alt="" /></a>
+          <div class="col-md-4 p-1">
+            <a href="ao_so_mi.html">
+              <img
+                src="{% static 'website/assets/images/_nh_danh_m_c_3_kaizen.webp'%}"
+                class="img-fluid"
+                alt=""
+              />
+            </a>
           </div>
-          <div class="col-md-4 text-uppercase">
-            <div class="newsletter h-100 d-flex flex-column justify-content-center align-items-center text-center">
-              <h4><strong>Đăng ký nhận bản tin</strong></h3>
-                <p>
-                  Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn
-                </p>
-                <input id="emailOrPhone" class="form-control" type="email" placeholder="Nhập email của bạn" />
-                <div id="feedback" class="invalid-feedback text-start" style="display: none">
-                  Vui lòng nhập Email!
-                </div>
-                <button id="submitBtn" class="btn-subcribe mt-4" title="Đăng ký" type="submit">
-                  <span>Đăng ký</span>
-                </button>
-            </div>
+          <div class="col-md-4 p-1">
+            <a href="ao_so_mi.html">
+              <img
+                src="{% static 'website/assets/images/_nh_danh_m_c_1_Kaizen.webp'%}"
+                class="img-fluid"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="col-md-4 p-1">
+            <a href="ao_so_mi.html">
+              <img
+                src="{% static 'website/assets/images/_nh_danh_m_c_2_kaizen_1_1.webp'%}"
+                class="img-fluid"
+                alt=""
+              />
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </main>
+    <div class="px-3 mt-3 position-relative">
+      <div
+        id="carouselExampleAutoplaying2"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators d-flex position-absolute">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying2"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying2"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3500">
+            <a href="#">
+              <img
+                src="{% static 'website/assets/images/crs-1.webp'%}"
+                class="d-block w-100"
+                alt="..."
+              />
+            </a>
+          </div>
+          <div class="carousel-item" data-bs-interval="3500">
+            <a href="#">
+              <img
+                src="{% static 'website/assets/images/crs-2.webp'%}"
+                class="d-block w-100"
+                alt="..."
+              />
+            </a>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying2"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying2"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="products-content pt-5">
+      <div class="products-title text-center mb-4">
+        <h3>BÁN CHẠY NHẤT</h3>
+      </div>
+      <div class="row products-slider" id="products-container">
+        <!-- Them san pham -->
+        {% for sp in danh_sach_san_pham %}
+        <div class="col-lg-3 col-6 mb-4">
+          <div class="card" style="width: 100%">
+            <a href="{% url 'chi_tiet_san_pham' sp.id %}">
+              <img
+                src="{{ sp.hinh_anh.url}}"
+                class="card-img-top"
+                style="border-radius: 5%"
+                alt="{{ sp.ten}}"
+              />
+            </a>
+            <div class="card-body">
+              <a href="{% url 'chi_tiet_san_pham' sp.id %}" class="btn btn-secondary mb-2">MUA NGAY</a>
+              <p class="card-text text-secondary" style="white-space: nowrap">
+                {{ sp.ten }}
+              </p>
+              <span>{{ sp.gia }} </span>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <p>Chưa có sản phẩm nào!</p>
+        {% endfor %}
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          $(".products-slider").slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+              { breakpoint: 1024, settings: { slidesToShow: 3 } },
+              { breakpoint: 600, settings: { slidesToShow: 2 } },
+            ],
+          });
+        });
+      </script>
+    </div>
+    <div class="banner-promo">
+      <a href="#"
+        ><img
+          src="{% static 'website/assets/images/Sale_kaizen.webp'%}"
+          class="img-fluid px-3 mt-5"
+          alt=""
+      /></a>
+    </div>
+    <div class="banner-subcribe mx-3 mt-3">
+      <div class="row">
+        <div class="col-md-8">
+          <a href="#"
+            ><img
+              src="{% static 'website/assets/images/Email3_kaizen.webp'%}"
+              class="img-fluid"
+              alt=""
+          /></a>
+        </div>
+        <div class="col-md-4 text-uppercase">
+          <div
+            class="newsletter h-100 d-flex flex-column justify-content-center align-items-center text-center"
+          >
+            <h4><strong>Đăng ký nhận bản tin</strong></h4>
+            <p>Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn</p>
+            <input
+              id="emailOrPhone"
+              class="form-control"
+              type="email"
+              placeholder="Nhập email của bạn"
+            />
+            <div
+              id="feedback"
+              class="invalid-feedback text-start"
+              style="display: none"
+            >
+              Vui lòng nhập Email!
+            </div>
+            <button
+              id="submitBtn"
+              class="btn-subcribe mt-4"
+              title="Đăng ký"
+              type="submit"
+            >
+              <span>Đăng ký</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 {% endblock content %}

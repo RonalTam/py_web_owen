@@ -1,0 +1,131 @@
+{% extends "website/base.html" %} {% load static %} {% block styles_rieng %}{%
+<link rel="stylesheet" href="{% static "website/css/chi_tiet_san_pham.css" %}">
+%}{% endblock styles_rieng %} {% block title %}{{ sp.ten }} - Chi tiết sản
+phẩm{% endblock %} {% block content %}
+<div class="container-fuild pt-5">
+  <div class="breadcrumbs ps-4">
+    <ul class="list-unstyled list-group-horizontal d-flex">
+      <li><a href="{% url 'home' %}">Trang Chủ</a></li>
+      <li>{{sp.ten}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row align-items-start">
+    <!-- Cột hình ảnh -->
+    <div class="col-md-6">
+      <div class="p-3 rounded">
+        <img
+          id="mainImg"
+          src="{{ sp.hinh_anh.url }}"
+          class="img-fluid rounded mb-3"
+          alt="{{ sp.ten }}"
+        />
+      </div>
+    </div>
+
+    <!-- Cột thông tin sản phẩm -->
+    <div class="col-md-6">
+      <div class="p-3">
+        <h2 class="fw-bold">{{ sp.ten }}</h2>
+        <p class="text-muted">Mã SP: {{ sp.duong_dan }}</p>
+        <h5 class="fw-bold">Giá: {{ sp.gia|floatformat:"0" }} ₫</h5>
+
+        <!-- Chọn màu -->
+        <form method="POST" action="{% url 'them_vao_gio_hang' sp.id %}">
+          {% csrf_token %}
+          <!-- Chọn size -->
+          <div class="my-5">
+            <label class="form-label fw-semibold">Chọn kích cỡ:</label>
+            <select name="size" class="form-select w-50" required>
+              <option value="">-- Chọn size --</option>
+              <option value="S">Size S</option>
+              <option value="M">Size M</option>
+              <option value="L">Size L</option>
+              <option value="XL">Size XL</option>
+              <option value="2XL">Size 2XL</option>
+            </select>
+          </div>
+          <div class="size-guide my-3">
+            <a
+              href=""
+              style="
+                background-image: url('{% static 'website/assets/images/ruller.svg' %}');
+              "
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              ><span>Hướng dẫn chọn size</span></a
+            >
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div
+              class="modal modal-lg fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 m-auto"
+                      id="staticBackdropLabel"
+                    >
+                      Hướng dẫn chọn size
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close position-absolute"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <img
+                      src="{% static 'website/assets/images/b_ng_size_owen_2_1_.webp' %}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Nút thêm vào giỏ -->
+          <div class="my-4">
+            <button class="btn w-75 py-2" style="background-color: #323232; color: white">
+              THÊM VÀO GIỎ HÀNG
+            </button>
+          </div>
+          <!-- Hiển thị thông báo khi them thanh congcong -->
+          {% if messages %} {% for message in messages %}
+          <div
+            class="alert alert-success alert-dismissible fade show mt-3"
+            role="alert"
+          >
+            {{ message }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          {% endfor %} {% endif %}
+        </form>
+        <!-- Mô tả -->
+        <div>
+          <h5 class="border-bottom pb-2 fw-bold">Mô tả sản phẩm</h5>
+          <p class="text-muted">
+            {{ sp.mo_ta|default:"Chưa có mô tả cho sản phẩm này." }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

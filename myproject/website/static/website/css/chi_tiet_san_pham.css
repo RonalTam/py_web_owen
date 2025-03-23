@@ -1,0 +1,30 @@
+.size-guide a {
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    text-decoration: none;
+    color: #323232;
+    font-weight: 550;
+}
+
+.breadcrumbs li {
+    display: inline;
+    font-size: 12px;
+    color: #656565;
+    line-height: 18px;
+}
+
+.breadcrumbs li>a {
+    color: #656565 !important;
+    text-decoration: none;
+}
+
+.breadcrumbs li>a:hover {
+    color: #575757;
+    text-decoration: underline;
+}
+
+.breadcrumbs li>a::after {
+    content: "|";
+    color: #656565 !important;
+    padding: 0 7px;
+}

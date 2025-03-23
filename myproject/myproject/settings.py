@@ -76,8 +76,16 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'web_python',                # Tên CSDL
+        'USER': 'root',                        # Tên user DB
+        'PASSWORD': '',           # Mật khẩu
+        'HOST': 'localhost',                   # Host (thường là localhost)
+        'PORT': '3306',                      # Port (3306 cho MySQL, 5432 cho PostgreSQL)
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'isolation_level': None,
+        },
     }
 }
 
@@ -117,6 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
