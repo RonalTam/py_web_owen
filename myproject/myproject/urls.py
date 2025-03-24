@@ -28,7 +28,7 @@ urlpatterns = [
     path('them-vao-gio-hang/<int:product_id>/', views.them_vao_gio_hang, name='them_vao_gio_hang'),
     path('cart/', views.gio_hang, name='gio_hang'),
     path('xoa-san-pham/', views.xoa_san_pham, name='xoa_san_pham'),
-
+    path('checkout/', views.checkout, name='checkout'),
 ]
 
 

@@ -1,0 +1,21 @@
+.step-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #323232;
+    margin-bottom: 12px;
+}
+
+.btn-checkout button {
+    background-color: rgba(101,101,101,.3);
+    border-radius: 1px;
+    height: 44px;
+    color: #323232;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.don-hang {
+    border-left: 2px solid #e5e5e5;
+}

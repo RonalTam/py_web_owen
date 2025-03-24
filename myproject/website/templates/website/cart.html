@@ -58,12 +58,12 @@
       <hr />
       <div class="d-flex justify-content-lg-around">
         <div class="d-flex" style="flex-direction: column-reverse">
-            <a href="{% url "home" %}" class="btn btn-outline-dark w-100">Tiếp tục mua sắm</a>
+            <a href="{% url "home" %}" class="btn btn-outline-dark w-100" style="border-radius: 0;">Tiếp tục mua sắm</a>
         </div>
         <div>
             <p>Tổng sản phẩm: {{ tong_so_luong }}</p>
             <p style="color: #c9ae63; font-size: 18px"><strong>Tổng tiền:</strong> {{ tong_tien }} ₫</p>
-            <a href="" class="btn w-100" style="background-color: #323232; color: white">Đặt hàng</a>
+            <a href="{% url "checkout" %}" class="btn w-100" style="background-color: #323232; color: white; border-radius: 0;">Đặt hàng</a>
         </div>
       </div>
       {% endif %}

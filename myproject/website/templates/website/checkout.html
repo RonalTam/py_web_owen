@@ -1,0 +1,163 @@
+{% extends "website/base.html" %} {% load static %} 
+{% block styles_rieng %}
+<link rel="stylesheet" href="{% static "website/css/cart.css" %}"> <link
+rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock styles_rieng %} {% block title %} Thanh Toán {% endblock title %} 
+{% block content %}
+<div class="container-fuild">
+  <div class="logo text-center" style="margin-top: 70px">
+    <img src="{% static "website/assets/images/logo.svg" %}" alt="">
+  </div>
+  <hr />
+  <div class="breadcrumbs ps-4">
+    <ul class="list-unstyled list-group-horizontal d-flex">
+      <li><a href="{% url 'home' %}">Trang chủ</a></li>
+      <li>Thanh toán</li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center">Thanh toán</h3>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3 dia-chi">
+          <label class="step-title">1. Địa chỉ giao hàng</label>
+          <div class="mb-3">
+            <span>Địa chỉ email</span>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="example@gmail.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <span>Họ và tên</span>
+            <input
+              type="text"
+              name="ho_ten"
+              class="form-control"
+              placeholder="Họ và Tên"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <span>Số điện thoại</span>
+            <input
+              type="tel"
+              name="dien_thoai"
+              class="form-control"
+              placeholder="Số điện thoại"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <span>Địa chỉ</span>
+            <input
+              type="text"
+              name="dia_chi"
+              class="form-control"
+              placeholder="Địa chỉ giao hàng"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3 van-chuyen">
+          <label class="step-title">2. Phương thức vận chuyển</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="check_van_chuyen"
+              id="flexRadioDefault1"
+              checked
+            />
+            <span class="form-check-label" for="flexRadioDefault1" style="display: flex; justify-content: space-between; align-items: center;">
+              GHN- Tiêu chuẩn - Tiêu chuẩn <span>+ 30.000 ₫</span>
+            </span>
+          </div>
+        </div>
+        <div class="mb-3 thanh-toan">
+          <label class="step-title">3. Phương thức thanh toán</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="check_thanh_toan"
+              id="flexRadioDefault1"
+              checked
+            />
+            <span class="form-check-label" for="flexRadioDefault1">
+              Thanh toán khi nhận hàng
+            </span>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="check_thanh_toan"
+              id="flexRadioDefault2"
+            />
+            <span class="form-check-label" for="flexRadioDefault2">
+              Thanh toán thẻ VNPAY (ATM, VISA,mastercard,..)
+            </span>
+          </div>
+        </div>
+        <div class="mb-3 ghi-chu">
+            <label class="step-title">4. Ghi chú</label>
+            <textarea
+                class="form-control"
+                name="ghi_chu"
+                rows="3"
+                placeholder="Ghi chú đơn hàng"
+            ></textarea>
+        </div>
+        <div class="mb-3 text-end">
+            <hr>
+            <label style="color: #c9ae63; font-size: 18px">Thành tiền: <span style="color: #323232">{{ thanh_tien }} ₫</span></label>
+        </div>
+            <div class="btn-checkout text-center">
+            <button type="submit" class="btn w-75">
+                Xác nhận đặt hàng
+            </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6 don-hang">
+        <h3 class="text-center">Đơn hàng của bạn</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Sản phẩm</th>
+                <th>Size</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in gio %}
+            <tr>
+                <td><img src="{{ item.hinh_anh }}" width="70" /></td>
+                <td>{{ item.ten }}</td>
+                <td>{{ item.size }}</td>
+                <td>{{ item.gia }} ₫</td>
+                <td>{{ item.so_luong }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        <div class="d-flex justify-content-end">
+            <div>
+                <p>Tổng sản phẩm: {{ tong_so_luong }}</p>
+                <p><strong>Tổng tiền:</strong> {{ tong_tien }} ₫</p>
+                <p><strong>Vận chuyển:</strong> 30000 ₫</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

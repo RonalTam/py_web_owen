@@ -85,3 +85,22 @@ def xoa_san_pham(request):
         request.session["gio"] = gio
         request.session.modified = True
     return redirect("gio_hang")
+
+def checkout(request):
+    gio = request.session.get('gio', [])
+    if not gio:
+        messages.warning(request, 'Giỏ hàng đang trống!')
+        return redirect('gio_hang')
+
+    if request.method == 'POST':
+        ho_ten = request.POST.get('ho_ten')
+        dien_thoai = request.POST.get('dien_thoai')
+        dia_chi = request.POST.get('dia_chi')
+
+        # Xóa giỏ hàng sau khi đặt
+        request.session['gio'] = []
+        return redirect('home')
+    tong_so_luong = sum(item["so_luong"] for item in gio)
+    tong_tien = sum((item["so_luong"] * item["gia"]) for item in gio)
+    thanh_tien = sum((item["so_luong"] * item["gia"]) + 30000 for item in gio)
+    return render(request, 'website/checkout.html', {'gio': gio, "tong_tien": tong_tien, "tong_so_luong": tong_so_luong, "thanh_tien": thanh_tien})
