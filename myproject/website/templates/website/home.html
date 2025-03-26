@@ -174,7 +174,7 @@ Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
         {% for sp in danh_sach_san_pham %}
         <div class="col-lg-3 col-6 mb-4">
           <div class="card" style="width: 100%">
-            <a href="{% url 'chi_tiet_san_pham' sp.id %}">
+            <a href="{% url 'chi_tiet_san_pham' sp.duong_dan %}">
               <img
                 src="{{ sp.hinh_anh.url}}"
                 class="card-img-top"
@@ -183,7 +183,7 @@ Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
               />
             </a>
             <div class="card-body">
-              <a href="{% url 'chi_tiet_san_pham' sp.id %}" class="btn btn-secondary mb-2">MUA NGAY</a>
+              <a href="{% url 'chi_tiet_san_pham' sp.duong_dan %}" class="btn btn-secondary mb-2">MUA NGAY</a>
               <p class="card-text text-secondary" style="white-space: nowrap">
                 {{ sp.ten }}
               </p>
@@ -224,7 +224,7 @@ Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
         <div class="col-md-8">
           <a href="#"
             ><img
-              src="{% static 'website/assets/images/Email3_kaizen.webp'%}"
+              src="{% static 'website/assets/images/Email_220125.webp'%}"
               class="img-fluid"
               alt=""
           /></a>

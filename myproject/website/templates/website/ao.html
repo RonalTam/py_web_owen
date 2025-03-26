@@ -2,20 +2,21 @@
 {% load static %}
 
 {% block styles_rieng %} 
+  <link rel="stylesheet" href="{% static "website/css/chi_tiet_san_pham.css" %}">
   <link rel="stylesheet" href="{% static "website/css/ao.css" %}">
 {% endblock styles_rieng %}
+{% block title %} Áo Nam Đẹp, Thiết Kế Thanh Lịch, Chất Liệu Cao Cấp - OWEN {% endblock title %}
 
 {% block content %}
   <main class="content">
     <div class="container-fuild">
       <div class="pt-5 mt-5">
-        <ul class="list-group list-group-flush list-group-horizontal">
-          <li class="list-group-item border-end">
-            <a href="index.html" class="text-decoration-none text-dark">Trang chủ
-            </a>
-          </li>
-          <li class="list-group-item border-0 text-secondary">Áo</li>
-        </ul>
+        <div class="breadcrumbs ps-4">
+          <ul class="list-unstyled list-group-horizontal d-flex">
+            <li><a href="{% url 'home' %}">Trang chủ</a></li>
+            <li>Áo</li>
+          </ul>
+        </div>
       </div>
       <div class="banner">
         <img src=" {% static "website/assets/images/4546_x_1000_ao_1.jpg" %} " style="width: 100%; object-fit: cover;" alt="">
@@ -28,7 +29,7 @@
     </div>
     <div class="container-fuild">
       <div class="row mx-3">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <div class="sidebar">
             <ul class="list-group ps-3">
               <li class="list-group-item"><a href="">
@@ -89,9 +90,25 @@
               <!-- <li class="list-group-item"><a href=""><strong>SẢN PHẨM BÁN CHẠY</span></strong></li> -->
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
           <div class="row" id="product-list">
             {% comment %} load san pham {% endcomment %}
+            {% for sp in danh_sach_san_pham_ao %}
+            <div class="col-6 col-sm-6 col-md-4 mb-4">
+              <div class="card" style="width: 100%">
+                <a href="{% url 'chi_tiet_san_pham_ao' sp.duong_dan %}">
+                  <img src="{{ sp.hinh_anh.url }}" class="card-img-top" alt="{{ sp.ten }}" />
+                </a>
+                <div class="card-body">
+                  <a href="{% url "chi_tiet_san_pham_ao" sp.duong_dan %}" class="btn w-50 btn-secondary">MUA NGAY</a>
+                  <p class="card-text text-secondary">{{ sp.ten }}</p>
+                  <span>{{sp.gia}} ₫</span>
+                </div>
+              </div>
+            </div>
+            {% empty %}
+            <p>Chưa có sản phẩm nào!</p>
+            {% endfor %}
           </div>
           <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
@@ -103,7 +120,6 @@
               <li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>
               <li class="page-item"><a class="page-link" href="#" onclick="changePage(2)">2</a></li>
               <li class="page-item"><a class="page-link" href="#" onclick="changePage(3)">3</a></li>
-              <li class="page-item"><a class="page-link" href="#" onclick="changePage(4)">4</a></li>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next" onclick="nextPage()">
                   <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>

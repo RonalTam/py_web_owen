@@ -1,6 +1,6 @@
 let currentPage = 1;
 const productsPerPage = 12;
-const totalProducts = 48; // Tổng số sản phẩm
+const totalProducts = 25; // Tổng số sản phẩm
 
 function displayProducts(page) {
     const productList = document.getElementById('product-list');

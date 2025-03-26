@@ -33,7 +33,7 @@ phẩm{% endblock %} {% block content %}
         <h5 class="fw-bold">Giá: {{ sp.gia|floatformat:"0" }} ₫</h5>
 
         <!-- Chọn màu -->
-        <form method="POST" action="{% url 'them_vao_gio_hang' sp.id %}">
+        <form method="POST" action="{% url 'them_vao_gio_hang' sp.duong_dan %}">
           {% csrf_token %}
           <!-- Chọn size -->
           <div class="my-5">
@@ -95,9 +95,12 @@ phẩm{% endblock %} {% block content %}
               </div>
             </div>
           </div>
+          <div class="banner">
+            <img src="{% static "website/assets/images/Artboard_23_1.webp" %}" alt="" class="img-fluid">
+          </div>
           <!-- Nút thêm vào giỏ -->
           <div class="my-4">
-            <button class="btn w-75 py-2" style="background-color: #323232; color: white">
+            <button class="btn w-100 py-2" style="background-color: #323232; color: white; border-radius: 0;">
               THÊM VÀO GIỎ HÀNG
             </button>
           </div>
@@ -128,4 +131,14 @@ phẩm{% endblock %} {% block content %}
     </div>
   </div>
 </div>
+<script>
+  // Tự động ẩn thông báo sau 5 giây
+  setTimeout(() => {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+      alert.classList.remove('show'); // Ẩn thông báo
+      alert.classList.add('fade'); // Thêm hiệu ứng mờ dần
+    });
+  }, 9000);
+</script>
 {% endblock %}

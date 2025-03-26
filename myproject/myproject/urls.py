@@ -24,11 +24,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('page-ao/', views.ao_view, name='ao'),
-    path('san-pham/<int:product_id>/', views.chi_tiet_san_pham, name='chi_tiet_san_pham'),
-    path('them-vao-gio-hang/<int:product_id>/', views.them_vao_gio_hang, name='them_vao_gio_hang'),
+    path('san-pham/<slug:duong_dan>/', views.chi_tiet_san_pham, name='chi_tiet_san_pham'),
+    path('ao/<slug:duong_dan>/', views.chi_tiet_san_pham_ao, name='chi_tiet_san_pham_ao'),
+    path('them-vao-gio-hang/<slug:duong_dan>/', views.them_vao_gio_hang, name='them_vao_gio_hang'),
     path('cart/', views.gio_hang, name='gio_hang'),
     path('xoa-san-pham/', views.xoa_san_pham, name='xoa_san_pham'),
     path('checkout/', views.checkout, name='checkout'),
+    path('login/', views.login, name='login'),
+    path('signup/', views.signup, name='signup'),
 ]
 
 

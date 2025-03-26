@@ -221,16 +221,16 @@
             <input type="text" placeholder="Bạn tìm gì..." />
           </div>
           <div class="account ms-3">
-            <a href="dangnhap.html">
+            <a href="{% url "login" %}">
               <i class="bi bi-person"></i>
             </a>
             <div class="dropdown-account">
               <ul class="account-item list-group">
                 <li class="list-group-item p-0">
-                  <a href="dangnhap.html" class="p-3 w-100 d-flex">Đăng nhập</a>
+                  <a href="{% url "login" %}" class="p-3 w-100 d-flex">Đăng nhập</a>
                 </li>
                 <li class="list-group-item p-0">
-                  <a href="dangki.html" class="p-3 w-100 d-flex">Tạo tài khoản</a>
+                  <a href="{% url "signup" %}" class="p-3 w-100 d-flex">Tạo tài khoản</a>
                 </li>
               </ul>
             </div>
