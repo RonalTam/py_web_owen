@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
 from .models import SanPham, SanPham_PageAo
 
@@ -25,9 +27,10 @@ def chi_tiet_san_pham_ao(request, duong_dan):
 
 def chi_tiet_san_pham(request, duong_dan):
     san_pham = get_object_or_404(SanPham, duong_dan=duong_dan)
+    danh_sach_san_pham = SanPham.objects.all()
     sizes = ["S", "M", "L", "XL", "2XL"]
     return render(
-        request, "website/chi_tiet_san_pham.html", {"sp": san_pham,"sizes": sizes}
+        request, "website/chi_tiet_san_pham.html", {"sp": san_pham,"sizes": sizes, "danh_sach_san_pham": danh_sach_san_pham}
     )
 
 
@@ -121,8 +124,47 @@ def checkout(request):
     thanh_tien = sum((item["so_luong"] * item["gia"]) for item in gio) + 30000
     return render(request, 'website/checkout.html', {'gio': gio, "tong_tien": tong_tien, "tong_so_luong": tong_so_luong, "thanh_tien": thanh_tien})
 
-def login(request):
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, "Sai thông tin đăng nhập.")
+
     return render(request, 'website/login.html')
 
 def signup(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+
+        if password != confirm_password:
+            messages.error(request, 'Mật khẩu không khớp.')
+            return render(request, 'website/signup.html')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Tên đăng nhập đã tồn tại.')
+            return render(request, 'website/signup.html')
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'Email đã được sử dụng.')
+            return render(request, 'website/signup.html')
+
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+
+        auth_login(request, user)  # Đăng nhập ngay sau khi đăng ký (tuỳ chọn)
+        return redirect('home')  # hoặc chuyển đến trang bạn muốn
+
     return render(request, 'website/signup.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')

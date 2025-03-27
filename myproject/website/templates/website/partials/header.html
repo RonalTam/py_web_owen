@@ -221,17 +221,34 @@
             <input type="text" placeholder="Bạn tìm gì..." />
           </div>
           <div class="account ms-3">
-            <a href="{% url "login" %}">
+            <a href="{% url "login_view" %}">
               <i class="bi bi-person"></i>
             </a>
             <div class="dropdown-account">
               <ul class="account-item list-group">
-                <li class="list-group-item p-0">
-                  <a href="{% url "login" %}" class="p-3 w-100 d-flex">Đăng nhập</a>
-                </li>
-                <li class="list-group-item p-0">
-                  <a href="{% url "signup" %}" class="p-3 w-100 d-flex">Tạo tài khoản</a>
-                </li>
+                {% if user.is_authenticated %}
+                  <li class="list-group-item p-0">
+                    <a href="" class="p-3 w-100 d-flex">Xin chào: {{user.username}}</a>
+                  </li>
+              
+                  {% if user.is_superuser %}
+                  <li class="list-group-item p-0">
+                    <a href="/admin/" target="_blank" class="p-3 w-100 d-flex">Trang quản trị</a>
+                  </li>
+                  {% endif %}
+              
+                  <li class="list-group-item p-0">
+                    <a href="{% url 'logout_view' %}" class="p-3 w-100 d-flex">Đăng xuất</a>
+                  </li>
+              
+                {% else %}
+                  <li class="list-group-item p-0">
+                    <a href="{% url 'login_view' %}" class="p-3 w-100 d-flex">Đăng nhập</a>
+                  </li>
+                  <li class="list-group-item p-0">
+                    <a href="{% url 'signup' %}" class="p-3 w-100 d-flex">Tạo tài khoản</a>
+                  </li>
+                {% endif %}
               </ul>
             </div>
           </div>

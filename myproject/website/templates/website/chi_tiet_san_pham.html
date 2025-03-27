@@ -131,6 +131,39 @@ phẩm{% endblock %} {% block content %}
     </div>
   </div>
 </div>
+<div class="container-fuild">
+  <div class="products-content pt-5">
+    <div class="products-title text-start ms-4 mb-4">
+      <h3>Có Thể Bạn Thích</h3>
+    </div>
+    <div class="row products-slider" id="products-container">
+      <!-- Them san pham -->
+      {% for sp in danh_sach_san_pham %}
+      <div class="col-lg-3 col-6 mb-4">
+        <div class="card" style="width: 100%">
+          <a href="{% url 'chi_tiet_san_pham' sp.duong_dan %}">
+            <img
+              src="{{ sp.hinh_anh.url}}"
+              class="card-img-top"
+              style="border-radius: 5%"
+              alt="{{ sp.ten}}"
+            />
+          </a>
+          <div class="card-body">
+            <a href="{% url 'chi_tiet_san_pham' sp.duong_dan %}" class="btn btn-secondary mb-2">MUA NGAY</a>
+            <p class="card-text text-secondary" style="white-space: nowrap">
+              {{ sp.ten }}
+            </p>
+            <span>{{ sp.gia| floatformat }} ₫</span>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p>Chưa có sản phẩm nào!</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 <script>
   // Tự động ẩn thông báo sau 5 giây
   setTimeout(() => {
@@ -140,5 +173,20 @@ phẩm{% endblock %} {% block content %}
       alert.classList.add('fade'); // Thêm hiệu ứng mờ dần
     });
   }, 9000);
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    $(".products-slider").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        { breakpoint: 1024, settings: { slidesToShow: 3 } },
+        { breakpoint: 600, settings: { slidesToShow: 2 } },
+      ],
+    });
+  });
 </script>
 {% endblock %}
