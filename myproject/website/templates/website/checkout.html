@@ -1,4 +1,4 @@
-{% extends "website/base.html" %} {% load static %} 
+{% extends "website/base.html" %} {% load static %} {% load humanize %}
 {% block styles_rieng %}
 <link rel="stylesheet" href="{% static "website/css/cart.css" %}"> <link
 rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock styles_rieng %} {% block title %} Thanh Toán {% endblock title %} 
@@ -24,16 +24,6 @@ rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock sty
         <div class="mb-3 dia-chi">
           <label class="step-title">1. Địa chỉ giao hàng</label>
           <div class="mb-3">
-            <span>Địa chỉ email</span>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="example@gmail.com"
-              required
-            />
-          </div>
-          <div class="mb-3">
             <span>Họ và tên</span>
             <input
               type="text"
@@ -50,6 +40,16 @@ rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock sty
               name="dien_thoai"
               class="form-control"
               placeholder="Số điện thoại"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <span>Địa chỉ email</span>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="example@gmail.com"
               required
             />
           </div>
@@ -75,7 +75,7 @@ rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock sty
               checked
             />
             <span class="form-check-label" for="flexRadioDefault1" style="display: flex; justify-content: space-between; align-items: center;">
-              GHN- Tiêu chuẩn - Tiêu chuẩn <span>+ 30.000 ₫</span>
+              GHN- Tiêu chuẩn - Tiêu chuẩn <span>+ 30,000 ₫</span>
             </span>
           </div>
         </div>
@@ -116,7 +116,7 @@ rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock sty
         </div>
         <div class="mb-3 text-end">
             <hr>
-            <label style="color: #c9ae63; font-size: 18px">Thành tiền: <span style="color: #323232">{{ thanh_tien }} ₫</span></label>
+            <label style="color: #c9ae63; font-size: 18px">Thành tiền: <span style="color: #323232">{{ thanh_tien | intcomma }} ₫</span></label>
         </div>
             <div class="btn-checkout text-center">
             <button type="submit" class="btn w-75">
@@ -143,7 +143,7 @@ rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock sty
                 <td><img src="{{ item.hinh_anh }}" width="70" /></td>
                 <td>{{ item.ten }}</td>
                 <td>{{ item.size }}</td>
-                <td>{{ item.gia }} ₫</td>
+                <td>{{ item.gia | intcomma }} ₫</td>
                 <td>{{ item.so_luong }}</td>
             </tr>
             {% endfor %}
@@ -153,8 +153,8 @@ rel="stylesheet" href="{% static "website/css/checkout.css" %}"> {% endblock sty
         <div class="d-flex justify-content-end">
             <div>
                 <p>Tổng sản phẩm: {{ tong_so_luong }}</p>
-                <p><strong>Tổng tiền:</strong> {{ tong_tien }} ₫</p>
-                <p><strong>Vận chuyển:</strong> 30000 ₫</p>
+                <p><strong>Tổng tiền:</strong> {{ tong_tien | intcomma }} ₫</p>
+                <p><strong>Vận chuyển:</strong> 30,000 ₫</p>
             </div>
         </div>
     </div>

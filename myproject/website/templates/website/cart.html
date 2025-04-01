@@ -1,4 +1,4 @@
-{% extends "website/base.html" %} {% load static %} {% block styles_rieng %}
+{% extends "website/base.html" %} {% load static %} {% load humanize %} {% block styles_rieng %}
 <link rel="stylesheet" href="{% static "website/css/cart.css" %}"> 
 {% endblock styles_rieng %} {% block title %} Giỏ hàng {% endblock title %} 
 {% block content%}
@@ -11,6 +11,7 @@
   </div>
 </div>
 <div class="container py-4">
+  <hr>
   <div class="row">
     <div class="col-md-9 pe-5">
       <h3>Giỏ hàng</h3>
@@ -29,24 +30,28 @@
         <tbody>
           {% for item in gio %}
           <tr>
-            <td><img src="{{ item.hinh_anh }}" width="70" /></td>
-            <td>{{ item.ten }}</td>
-            <td>{{ item.size }}</td>
-            <td>{{ item.gia }} ₫</td>
-            <td>{{ item.so_luong }}</td>
-            <td>
-              <form
-                action="{% url 'xoa_san_pham' %}"
-                method="POST"
-                class="d-inline"
-                onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?');"
-              >
-                {% csrf_token %}
-                <input type="hidden" name="id" value="{{ item.id }}" />
-                <input type="hidden" name="size" value="{{ item.size }}" />
-                <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
-              </form>
-            </td>
+              <td><img src="{{ item.hinh_anh }}" width="70" /></td>
+              <td>{{ item.ten }}</td>
+              <td>{{ item.size }}</td>
+              <td>{{ item.gia | intcomma }} ₫</td>
+              <td>
+                  <form action="{% url 'cap_nhat_gio_hang' %}" method="POST" class="d-inline">
+                      {% csrf_token %}
+                      <input type="hidden" name="id" value="{{ item.id }}" />
+                      <input type="hidden" name="size" value="{{ item.size }}" />
+                      <button type="submit" name="action" value="giam" class="btn btn-sm btn-outline-secondary">-</button>
+                      <span class="mx-2">{{ item.so_luong }}</span>
+                      <button type="submit" name="action" value="tang" class="btn btn-sm btn-outline-primary">+</button>
+                  </form>
+              </td>
+              <td>
+                  <form action="{% url 'xoa_san_pham' %}" method="POST" class="d-inline" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?');">
+                      {% csrf_token %}
+                      <input type="hidden" name="id" value="{{ item.id }}" />
+                      <input type="hidden" name="size" value="{{ item.size }}" />
+                      <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                  </form>
+              </td>
           </tr>
           {% endfor %}
         </tbody>
@@ -62,7 +67,7 @@
         </div>
         <div>
             <p>Tổng sản phẩm: {{ tong_so_luong }}</p>
-            <p style="color: #c9ae63; font-size: 18px"><strong>Tổng tiền:</strong> {{ tong_tien }} ₫</p>
+            <p style="font-size: 18px"><strong style="color: #c9ae63;">Tổng tiền:</strong> {{ tong_tien | intcomma }} ₫</p>
             <a href="{% url "checkout" %}" class="btn w-100" style="background-color: #323232; color: white; border-radius: 0;">Đặt hàng</a>
         </div>
       </div>

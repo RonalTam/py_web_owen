@@ -1,4 +1,4 @@
-{% extends "website/base.html" %} {% load static %} {% block styles_rieng %}{%
+{% extends "website/base.html" %} {% load static %} {% load humanize %} {% block styles_rieng %}{%
 <link rel="stylesheet" href="{% static "website/css/chi_tiet_san_pham.css" %}">
 %}{% endblock styles_rieng %} {% block title %}{{ sp.ten }} - Chi tiết sản
 phẩm{% endblock %} {% block content %}
@@ -30,7 +30,7 @@ phẩm{% endblock %} {% block content %}
       <div class="p-3">
         <h2 class="fw-bold">{{ sp.ten }}</h2>
         <p class="text-muted">Mã SP: {{ sp.duong_dan }}</p>
-        <h5 class="fw-bold">Giá: {{ sp.gia|floatformat:"0" }} ₫</h5>
+        <h5 class="fw-bold">Giá: {{ sp.gia| intcomma }} ₫</h5>
 
         <!-- Chọn màu -->
         <form method="POST" action="{% url 'them_vao_gio_hang' sp.duong_dan %}">
@@ -154,7 +154,7 @@ phẩm{% endblock %} {% block content %}
             <p class="card-text text-secondary" style="white-space: nowrap">
               {{ sp.ten }}
             </p>
-            <span>{{ sp.gia| floatformat }} ₫</span>
+            <span>{{ sp.gia| intcomma }} ₫</span>
           </div>
         </div>
       </div>
@@ -178,8 +178,9 @@ phẩm{% endblock %} {% block content %}
   document.addEventListener("DOMContentLoaded", function () {
     $(".products-slider").slick({
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       arrows: false,
+      infinite: true,
       autoplay: true,
       autoplaySpeed: 2000,
       responsive: [

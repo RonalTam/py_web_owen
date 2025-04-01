@@ -1,4 +1,4 @@
-{% extends "website/base.html" %} {% load static %} {% block title %}Michael
+{% extends "website/base.html" %} {% load static %} {% load humanize %} {% block title %}Michael
 Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
 <main class="content">
   <div class="container-fuild">
@@ -187,7 +187,7 @@ Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
               <p class="card-text text-secondary" style="white-space: nowrap">
                 {{ sp.ten }}
               </p>
-              <span>{{ sp.gia| floatformat }} ₫</span>
+              <span>{{ sp.gia| intcomma }} ₫</span>
             </div>
           </div>
         </div>
@@ -199,10 +199,11 @@ Owen - Siêu tiền đạo người Anh{% endblock %} {% block content %}
         document.addEventListener("DOMContentLoaded", function () {
           $(".products-slider").slick({
             slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToScroll: 2,
+            infinite: true,
             arrows: false,
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 1000,
             responsive: [
               { breakpoint: 1024, settings: { slidesToShow: 3 } },
               { breakpoint: 600, settings: { slidesToShow: 2 } },

@@ -20,9 +20,10 @@ def ao_view(request):
 
 def chi_tiet_san_pham_ao(request, duong_dan):
     san_pham = get_object_or_404(SanPham_PageAo, duong_dan=duong_dan)
+    danh_sach_san_pham = SanPham.objects.all()
     sizes = ["S", "M", "L", "XL", "2XL"]
     return render(
-        request, "website/chi_tiet_san_pham.html", {"sp": san_pham,"sizes": sizes}
+        request, "website/chi_tiet_san_pham.html", {"sp": san_pham,"sizes": sizes, "danh_sach_san_pham": danh_sach_san_pham}
     )
 
 def chi_tiet_san_pham(request, duong_dan):
@@ -87,6 +88,28 @@ def gio_hang(request):
         {"gio": gio, "tong_so_luong": tong_so_luong, "tong_tien": tong_tien},
     )
 
+def cap_nhat_gio_hang(request):
+    if request.method == "POST":
+        product_id = int(request.POST.get("id"))
+        size = request.POST.get("size")
+        action = request.POST.get("action")
+        gio = request.session.get("gio", [])
+
+        # Tìm sản phẩm trong giỏ hàng và thay đổi số lượng
+        for item in gio:
+            if item["id"] == product_id and item["size"] == size:
+                if action == "tang":
+                    item["so_luong"] += 1
+                elif action == "giam" and item["so_luong"] > 1:
+                    item["so_luong"] -= 1
+                break
+
+        # Cập nhật lại giỏ hàng trong session
+        request.session["gio"] = gio
+        request.session.modified = True
+
+        messages.success(request, "Giỏ hàng đã được cập nhật.")
+    return redirect("gio_hang")
 
 def xoa_san_pham(request):
     if request.method == "POST":

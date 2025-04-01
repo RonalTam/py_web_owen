@@ -28,6 +28,7 @@ urlpatterns = [
     path('ao/<slug:duong_dan>/', views.chi_tiet_san_pham_ao, name='chi_tiet_san_pham_ao'),
     path('them-vao-gio-hang/<slug:duong_dan>/', views.them_vao_gio_hang, name='them_vao_gio_hang'),
     path('cart/', views.gio_hang, name='gio_hang'),
+    path('cap-nhat-gio-hang/', views.cap_nhat_gio_hang, name='cap_nhat_gio_hang'),
     path('xoa-san-pham/', views.xoa_san_pham, name='xoa_san_pham'),
     path('checkout/', views.checkout, name='checkout'),
     path('login/', views.login_view, name='login_view'),
